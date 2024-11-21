@@ -1,0 +1,40 @@
+model:
+  weights_path: "yolov7/yolov7.pt"
+  img_size: 640
+  conf_thres: 0.5
+  iou_thres: 0.5
+
+video:
+  output_dir: "yolov7/runs/detect/exp"
+  save_stream: true
+  batch_size: 32
+  output_format: "mp4"
+  save_frames: false
+  compression: 95
+
+server:
+  host: "0.0.0.0"
+  port: 5000
+
+stream:
+  buffer_size: 30
+  frame_skip: 0
+  processing_delay: 0.0
+  youtube_quality: "best"
+  target_fps: 30
+  max_resolution: 1080
+  rtsp_buffer_size: 1024
+  reconnect_attempts: 3
+  timeout: 30
+
+logging:
+  level: "INFO"
+  file: "yolo_detection.log"
+  console: true
+
+location:
+  name: "Main Entrance"
+  coordinates:
+    latitude: 40.7128
+    longitude: -74.0060
+  timezone: "America/New_York"
